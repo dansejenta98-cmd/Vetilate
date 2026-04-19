@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="no">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Veterinærverktøy – eierinformasjon</title>
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+  <header class="page-header">
+    <div class="container">
+      <h1>Veterinærverktøy for eierinformasjon</h1>
+      <p class="lead">
+        Genererer strukturert og rolig informasjon til dyreeier etter konsultasjon.
+      </p>
+    </div>
+  </header>
+
+  <main class="container layout">
+    <section class="panel controls">
+      <h2>Inndata</h2>
+
+      <label for="species">Art</label>
+      <select id="species"></select>
+
+      <label for="diagnosis">Diagnose</label>
+      <select id="diagnosis"></select>
+
+      <label for="level">Informasjonsnivå</label>
+      <select id="level">
+        <option value="standard">Standard</option>
+      </select>
+
+      <label for="animalReference">Hvordan teksten skal omtale dyret</label>
+      <select id="animalReference">
+        <option value="dyret ditt">dyret ditt</option>
+        <option value="hunden din">hunden din</option>
+        <option value="katten din">katten din</option>
+      </select>
+
+      <label for="findings">Kliniske funn / interne notater</label>
+      <textarea id="findings" placeholder="Eksempel: hyppig vannlating, små mengder urin, ellers god allmenntilstand"></textarea>
+
+      <label for="treatment">Tiltak / behandling gitt eller avtalt</label>
+      <textarea id="treatment" placeholder="Eksempel: urinprøve sendt, symptomatisk behandling avtalt, kontroll ved behov"></textarea>
+
+      <label for="followUp">Plan for videre oppfølging</label>
+      <textarea id="followUp" placeholder="Eksempel: ny vurdering ved manglende bedring eller forverring"></textarea>
+
+      <div class="button-row">
+        <button id="generateBtn" class="primary">Lag tekst</button>
+        <button id="copyBtn" class="secondary">Kopier tekst</button>
+        <button id="resetBtn" class="secondary">Nullstill</button>
+      </div>
+
+      <div class="status-box">
+        <strong>Status:</strong>
+        <span id="statusText">Klar til å generere.</span>
+      </div>
+    </section>
+
+    <section class="panel output-panel">
+      <div class="output-toolbar">
+        <div>
+          <h2>Output</h2>
+          <p class="muted">Ferdig tekst kan kopieres rett inn i journal eller meldingssystem.</p>
+        </div>
+        <span class="badge" id="diagnosisBadge">Ingen diagnose valgt</span>
+      </div>
+
+      <article id="output" class="output">
+        <p>Velg diagnose og trykk <strong>Lag tekst</strong>.</p>
+      </article>
+    </section>
+  </main>
+
+  <footer class="container footer-note">
+    <p>
+      Viktig: Innholdet må faglig kvalitetssikres før klinisk bruk. Denne prototypen inneholder ingen lagring og ingen personopplysninger.
+    </p>
+  </footer>
+
+  <script src="data/templates.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
